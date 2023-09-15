@@ -46,8 +46,8 @@ class Trainer:
         Note: we might be testing if your network code is generic enough through define_network. Your network code can be even more general, but this is the bare minimum you need to support.
         Note: You are not required to use define_network in setup function below, although you are welcome to.
         '''
-        hidden_units = parameters["hidden_units"] #needed for prob 2, 3, 4, mnist
-        hidden_layers = parameters["hidden_layers"] #needed for prob 3, 4, mnist
+        hidden_units = parameters["hidden_units"] #needed for prob 2, 3, 4
+        hidden_layers = parameters["hidden_layers"] #needed for prob 3, 4, 
         #TODO: construct your network here
         network = Network(...)
         return network
