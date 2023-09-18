@@ -42,3 +42,4 @@ class SGDSolver:
             # TODO: Loop through each module in self.modules and update its weight `W` using its gradient `G`.
             module.W = ...
             pass
+
