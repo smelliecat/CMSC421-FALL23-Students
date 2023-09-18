@@ -6,3 +6,4 @@ matplotlib
 tqdm
 scikit-learn
 h5py
+torchsummary

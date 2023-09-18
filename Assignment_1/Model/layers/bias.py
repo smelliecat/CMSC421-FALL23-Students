@@ -42,6 +42,7 @@ class BiasLayer:
         
         # TODO: Perform the actual forward computation and store the result in `self.output_array`. Replace `None` with appropriate code.
         self.output_array = None 
+        
         # TODO: Activate the computed output_array by passing it to the forward function of the activation function.
         self.activated_output = ...
         return self.activated_output

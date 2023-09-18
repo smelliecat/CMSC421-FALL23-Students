@@ -11,6 +11,7 @@ import torch.nn as nn
 import torch.optim as optim
 import json
 import torchvision
+from torchvision.datasets import ImageFolder
 import torchvision.transforms as transforms
 from torch.utils.data import DataLoader
 from sklearn.metrics import confusion_matrix, precision_recall_fscore_support
@@ -43,17 +44,40 @@ def parse_arguments():
     return parser.parse_args()
 
 
+# def load_data(DATA_PATH, batch_size):
+#     print(f"data_path: {DATA_PATH}")
+
+#     train_trans = transforms.Compose([transforms.ToTensor(), transforms.Normalize((0.5,), (0.5,))])
+#     train_dataset = torchvision.datasets.MNIST(root=DATA_PATH, download=True, train=True, transform=train_trans)
+#     train_loader = DataLoader(dataset=train_dataset, batch_size=batch_size, shuffle=True, num_workers=8)
+
+#     test_trans = transforms.Compose([transforms.ToTensor(), transforms.Normalize((0.5,), (0.5,))])
+#     test_dataset = torchvision.datasets.MNIST(root=DATA_PATH, download=True, train=False, transform=test_trans)
+#     test_loader = DataLoader(dataset=test_dataset, batch_size=batch_size, shuffle=False, num_workers=8)
+
+#     return train_loader, test_loader
+
 def load_data(DATA_PATH, batch_size):
     print(f"data_path: {DATA_PATH}")
 
-    train_trans = transforms.Compose([transforms.ToTensor(), transforms.Normalize((0.5,), (0.5,))])
-    train_dataset = torchvision.datasets.MNIST(root=DATA_PATH, download=True, train=True, transform=train_trans)
+    # Define transformations
+    train_trans = transforms.Compose([
+        transforms.ToTensor(),
+        transforms.Normalize((0.5,), (0.5,))
+    ])
+    test_trans = transforms.Compose([
+        transforms.ToTensor(),
+        transforms.Normalize((0.5,), (0.5,))
+    ])
+    
+    # Create train and test datasets
+    train_dataset = ImageFolder(root=f"{DATA_PATH}train", transform=train_trans)
+    test_dataset = ImageFolder(root=f"{DATA_PATH}test", transform=test_trans)
+    
+    # Create data loaders
     train_loader = DataLoader(dataset=train_dataset, batch_size=batch_size, shuffle=True, num_workers=8)
-
-    test_trans = transforms.Compose([transforms.ToTensor(), transforms.Normalize((0.5,), (0.5,))])
-    test_dataset = torchvision.datasets.MNIST(root=DATA_PATH, download=True, train=False, transform=test_trans)
     test_loader = DataLoader(dataset=test_dataset, batch_size=batch_size, shuffle=False, num_workers=8)
-
+    
     return train_loader, test_loader
 
 def compute_accuracy(y_pred, y_batch):
@@ -135,9 +159,10 @@ def main():
     device = torch.device("cuda" if use_cuda else "cpu")
     print(f"device: {device}")
 
-    train_loader, test_loader = load_data("./data/", args.batch_size)
+# Assignment_1/Convolutional_Neural_Networks/data
+    train_loader, test_loader = load_data("Assignment_1/Convolutional_Neural_Networks/data/", args.batch_size)
 
-    model = CNNModel(args.fc_hidden1, args.fc_hidden2, args.dropout).to(device)
+    model = CNNModel(args=args).to(device)
 
     optimizer = optim.Adam(model.parameters(), lr=args.learning_rate)
 

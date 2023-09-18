@@ -21,7 +21,7 @@ class Sigmoid:
         return output_array
     
     @staticmethod
-    def backward(downstream):
+    def backward(downstream, input_array=None):
         # Compute the gradient of the loss with respect to the input
         input_grad = ...
         return input_grad

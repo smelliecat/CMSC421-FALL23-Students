@@ -6,6 +6,7 @@ from activation.relu import ReLU
 from activation.sigmoid import Sigmoid
 from activation.tanh import Tanh
 
+# This file no loger needs to be modified!
 class HiddenLayer(LinearLayer):
     """
     Represents a hidden layer in a neural network. Inherits from the LinearLayer class
