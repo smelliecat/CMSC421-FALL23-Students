@@ -1,4 +1,7 @@
 import numpy as np
+from activation.relu import ReLU
+from activation.sigmoid import Sigmoid
+from activation.tanh import Tanh
 
 class BiasLayer:
     """
@@ -6,13 +9,22 @@ class BiasLayer:
     Each feature dimension of the input gets a bias term.
     """
 
-    def __init__(self, input_layer) -> None:
+    def __init__(self, input_layer, activation='ReLU') -> None:
         self.input_layer = input_layer
         num_data, num_input_features = input_layer.output_dimension
         self.output_dimension = input_layer.output_dimension
         # Declare the weight matrix
         # TODO: Declare the weight matrix (bias term) for the layer. Replace `None` with appropriate code.
         self.W = None 
+
+        if activation == 'Sigmoid':
+            self.activation = Sigmoid()
+
+        elif activation == 'Tahn':
+            self.activation = Tanh()
+
+        else:
+            self.activation = ReLU()
     
     def forward(self):
         # self.input_array = self.input_layer.forward()
@@ -30,6 +42,9 @@ class BiasLayer:
         
         # TODO: Perform the actual forward computation and store the result in `self.output_array`. Replace `None` with appropriate code.
         self.output_array = None 
+        # TODO: Activate the computed output_array by passing it to the forward function of the activation function.
+        self.activated_output = ...
+        return self.activated_output
 
 
     def backward(self, downstream):
@@ -41,6 +56,8 @@ class BiasLayer:
         """
         # TODO: Compute the gradient of the output with respect to the bias term `self.W` and store it in `self.G`. Replace `None` with appropriate code.
         self.G = None
+        
+        activation_grad = self.activation.backward(downstream, self.activated_output)
         
         # TODO: Compute the gradient of the output with respect to the inputs and pass this backward to the layer behind. Replace `None` with appropriate code.
         self.input_layer.backward(None)

@@ -9,7 +9,7 @@ from Model.layers.output_layer import OutputLayer
 from Model.optimizers.sgd import SGDSolver
 from Model.optimizers.adam import AdamSolver
 from Data.data import Data
-from Data.generator import q1
+from Data.generator import q1_a
 from Model.evaluate.evaluate import evaluate_model
 
 

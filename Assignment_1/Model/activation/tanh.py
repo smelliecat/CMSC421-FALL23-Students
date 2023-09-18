@@ -23,22 +23,11 @@ class Tanh:
         return output_array
     
     @staticmethod
-    def backward(downstream):
+    def backward(downstream, input_array=None):
         # Compute the gradient of the loss with respect to the input
-        input_grad = ...
+        tanh_grad = ...
+        input_grad = downstream * tanh_grad
         return input_grad
-
-    
-    # def forward(self):
-    #     self.input_array = self.input_layer.forward()
-    #     self.tahn_output = (np.exp(self.input_array) - (np.exp(-self.input_array)) / np.exp(self.input_array) + (np.exp(-self.input_array)))
-    #     return self.tahn_output
-
-    # def backward(self, downstream):
-    #     tanh_grad = 1 - self.tahn_output**2
-    #     input_grad = downstream * tanh_grad
-    #     self.input_layer.backward(input_grad)
-
 
 
 # They can NOT use the np.tahn function

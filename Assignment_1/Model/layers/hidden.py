@@ -20,7 +20,7 @@ class HiddenLayer(LinearLayer):
     forward(): Performs the forward pass, including linear transformation and activation.
     backward(downstream): Performs the backward pass, including both activation and linear gradients.
     """
-    def __init__(self, input_dimension, output_dimension, activation='ReLU') -> None:
+    def __init__(self, input_dimension, output_dimension) -> None:
         """
         Initializes the HiddenLayer.
         
@@ -32,15 +32,6 @@ class HiddenLayer(LinearLayer):
         """
         super().__init__(input_dimension, output_dimension)
 
-        if activation == 'Sigmoid':
-            self.activation = Sigmoid()
-
-        elif activation == 'Tahn':
-            self.activation = Tanh()
-
-        else:
-            self.activation = ReLU()
-
     def forward(self):
         """
         Performs the forward pass by first conducting the linear transformation and then the activation.
@@ -50,7 +41,6 @@ class HiddenLayer(LinearLayer):
         _out: The linearly transformed data.
         """
         _out = super().forward()
-        self.activated_output = self.activation.forward(_out)
         return _out
     
     def backward(self, downstream):
@@ -63,6 +53,5 @@ class HiddenLayer(LinearLayer):
         downstream: The gradient of the loss with respect to the output of this layer.
         """
         # TODO: Implement the backward pass.
-        activation_grad = ...
-        super().backward(activation_grad)
+        super().backward(downstream=downstream)
         
