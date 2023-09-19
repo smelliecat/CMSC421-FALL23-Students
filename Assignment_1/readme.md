@@ -91,6 +91,8 @@ After setting up your environment, you'll need to add the `Assignment_1` directo
 
     ```bash
     export PYTHONPATH=$PYTHONPATH:/path/to/Assignment_1
+    export PYTHONPATH=$PYTHONPATH:/path/to/Assignment_1/Model
+    export PYTHONPATH=$PYTHONPATH:/path/to/Assignment_1/Data
     ```
 
     To make this change permanent, add the above line to your shell's startup script (e.g., `.bashrc`, `.zshrc`).
@@ -99,6 +101,8 @@ After setting up your environment, you'll need to add the `Assignment_1` directo
 
     ```bash
     set PYTHONPATH=%PYTHONPATH%;C:\path\to\Assignment_1
+    set PYTHONPATH=%PYTHONPATH%;C:\path\to\Assignment_1/Model
+    set PYTHONPATH=%PYTHONPATH%;C:\path\to\Assignment_1/Data
     ```
 
     To make it permanent, add it to the System Environment Variables through the Control Panel.
