@@ -60,7 +60,7 @@ _PLEASE NOTE: SHOULD ANY ERROR BE THROWN THAT A MODULE CANNOT BE FOUND, ADD IT T
     Or, if you're on Windows:
 
     ```bash
-    py -m venv my_project_env
+    python -m venv my_project_env
     ```
 
 3. **Activate the Environment**

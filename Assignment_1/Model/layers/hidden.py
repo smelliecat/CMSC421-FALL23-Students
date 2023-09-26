@@ -53,6 +53,5 @@ class HiddenLayer(LinearLayer):
         -----------
         downstream: The gradient of the loss with respect to the output of this layer.
         """
-        # TODO: Implement the backward pass.
         super().backward(downstream=downstream)
         

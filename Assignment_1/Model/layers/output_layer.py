@@ -26,8 +26,7 @@ class OutputLayer(LinearLayer):
             self.activation = Sigmoid(self)
         elif activation == 'Tanh':
             self.activation = Tanh(self)
-        # elif activation == 'Linear':
-        #     self.activation = 
+
 
     def forward(self):
         _out = super().forward()

@@ -37,14 +37,13 @@ class ModuleList(collections.abc.MutableSequence):
  
     def get_modules_with_parameters(self):
         modules_with_parameters_list = []
-        for mod in self.modules_with_parameters:
+        for mod in self.list:
             print(f"Checking module: {mod}")
             if is_modules_with_parameters(mod):
                 print(f"Adding module: {mod}")
                 modules_with_parameters_list.append(mod)
         print(f"Final list of modules with parameters: {modules_with_parameters_list}")
         return modules_with_parameters_list
-
     pass
 
 

@@ -56,7 +56,7 @@ class BiasLayer:
         - downstream: The gradient of the loss function with respect to the output of this layer.
         """
         # TODO: Compute the gradient of the output with respect to the bias term `self.W` and store it in `self.G`. Replace `None` with appropriate code.
-        self.G = None
+        self.G = downstream
         
         activation_grad = self.activation.backward(downstream, self.activated_output)
         
