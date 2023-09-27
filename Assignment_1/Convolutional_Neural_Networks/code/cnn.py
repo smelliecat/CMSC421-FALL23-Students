@@ -27,12 +27,12 @@ class CNNModel(nn.Module):
         # Define the model architecture here
         # MNIST image input size batch * 28 * 28 (one input channel)
         
-        # Define CNN layers below
+        # TODO Define CNN layers below
         self.conv = nn.Sequential(
            ...
         )
 
-        # Define fully connected layer below
+        # TODO Define fully connected layer below
         input_size = ...
         output_size = ...  # Example size, adjust as needed
         self.fc = nn.Linear(input_size, output_size)
@@ -48,10 +48,10 @@ class CNNModel(nn.Module):
         Returns:
             result: Output tensor of shape (batch_size, num_classes)
         """
-        # Feed input features to the CNN models defined above
+        # TODO Feed input features to the CNN models defined above
         x_out = ...
         
-        # Flatten tensor code
+        # TODO Flatten tensor code
         x = ...
 
         # Fully connected layer (Linear layer)
