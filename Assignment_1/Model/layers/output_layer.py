@@ -30,9 +30,7 @@ class OutputLayer(LinearLayer):
 
     def forward(self):
         _out = super().forward()
-        # self.activated_output = self.activation.forward()
         return _out
 
     def backward(self, downstream):
-        # activation_grad = self.activation.backward(downstream)
         super().backward(downstream)
