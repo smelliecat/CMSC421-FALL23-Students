@@ -16,13 +16,13 @@ class Sigmoid:
 
     @staticmethod
     def forward(input_array):
-        # Apply the Sigmoid activation function to the output of the input layer
+        # TODO Apply the Sigmoid activation function to the output of the input layer
         output_array = ...
         return output_array
     
     @staticmethod
     def backward(downstream, input_array=None):
-        # Compute the gradient of the loss with respect to the input
+        # TODO Compute the gradient of the loss with respect to the input
         input_grad = ...
         return input_grad
 

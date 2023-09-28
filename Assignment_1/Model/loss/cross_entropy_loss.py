@@ -25,7 +25,7 @@ class CrossEntropyLoss:
         self.labels = labels
 
     def forward(self):
-        # TODO: Implement the forward pass to compute the loss.
+        # Implement the forward pass to compute the loss.
         self.in_array = self.input_layer.forward()
         self.num_data = self.in_array.shape[1]
         # TODO: Compute the result of mean squared error, and store it as self.out_array

@@ -64,8 +64,8 @@ def generate_sine_data(num_samples=100, dimension=1, test_size=0.2, amplitude=1,
         for d in range(dimension):
             y += amplitude * np.sin(frequency * x[:, d].reshape(-1, 1) + phase)
 
-    print(max(y))
-    print(min(y))
+    # print(max(y))
+    # print(min(y))
 
     if categorical:
         # Define bins for y values

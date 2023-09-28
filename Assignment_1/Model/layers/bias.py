@@ -27,7 +27,7 @@ class BiasLayer:
             self.activation = ReLU()
 
         else:
-            self.activation == None
+            self.activation = None
     
     def forward(self):
         # self.input_array = self.input_layer.forward()
