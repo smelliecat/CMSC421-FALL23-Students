@@ -29,7 +29,6 @@ class HiddenLayer(LinearLayer):
         -----------
         input_dimension: The number of input features.
         output_dimension: The number of output features.
-        activation (optional): The activation function to use ('ReLU', 'Sigmoid', or 'Tanh'). Default is 'ReLU'.
         """
         super().__init__(input_dimension, output_dimension)
 
