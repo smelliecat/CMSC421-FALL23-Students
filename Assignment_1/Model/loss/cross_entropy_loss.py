@@ -28,7 +28,7 @@ class CrossEntropyLoss:
         # Implement the forward pass to compute the loss.
         self.in_array = self.input_layer.forward()
         self.num_data = self.in_array.shape[1]
-        # TODO: Compute the result of mean squared error, and store it as self.out_array
+        # TODO: Compute the result of CE Loss, and store it as self.out_array
         self.out_array = ...
         return self.out_array
 
